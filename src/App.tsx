@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Hero from './components/hero';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Description from './pages/description';
+import Home from './pages/home';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Background from './components/Background';
 
 function App() {
+  const location = useLocation();
+  // console.log(location)
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setEntered(false);
+    } else {
+      setEntered(true);
+    }
+  }, [location.pathname]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className='font-ibm-plex items-center flex justify-center flex-col '>
+        <Background entered={entered} />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/description' element={<Description />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
