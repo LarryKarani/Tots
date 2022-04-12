@@ -68,15 +68,16 @@ const Distribution = () => {
         show: true,
         position: 'bottom',
         horizontalAlign: 'center', 
-        width: '50%'
         
       },
       labels: data?.totsDistribution && Object.keys(data.totsDistribution),
       responsive: [{
+        breakpoint: 480,
         options: {
+          chart: {
+            width:'100%'
+          },
           legend: {
-            showForSingleSeries: true,
-            show: true,
             position: 'bottom'
           }
         }
