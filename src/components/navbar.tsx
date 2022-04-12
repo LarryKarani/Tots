@@ -1,5 +1,5 @@
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 //import { Link } from 'react-router-dom';
@@ -7,8 +7,7 @@ import Tots from '../tots.png'
 import { Link } from 'react-scroll';
 import NavDropDown from './DropDown';
 import { Disclosure, Menu} from '@headlessui/react';
-import { BellIcon } from '@heroicons/react/outline';
-import { isTemplateHead } from 'typescript';
+
 
 const navigation = [
   { name: 'About', href: 'home', current: true},
@@ -17,6 +16,11 @@ const navigation = [
   { name: 'Timeline', href: 'timeline', current: false },
   { name: 'Team', href: 'team', current: false},
 ];
+
+const setCurrent = (name: string) => {
+
+
+}
 
 const options = [
 
@@ -115,7 +119,10 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Navbar() {
+ 
+  const [current , setCurrent] = useState('About')
+
   return (
     <Disclosure
       as='nav'
@@ -160,8 +167,14 @@ export default function Example() {
                           key={item.name}
                           spy={true}
                           smooth={true}
+                          onClick={() => setCurrent(item.name)}
                           to={item.href}
-                          className='text-base font-medium text-white hover:text-gray-300 cursor-pointer'
+                          className={classNames(
+                            item.name === current
+                              ? 'bg-gray-900 text-purple-500'
+                              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            'text-base font-medium text-white px-2 py-1 hover:text-gray-300 cursor-pointer'
+                          )}
                         >
                           {item.name}
                         </Link>
@@ -235,17 +248,20 @@ export default function Example() {
                   key={item.name}
                   as={Link}
                   to={item.href}
+                  onClick={() => setCurrent(item.name)}
                   className={classNames(
-                    item.current
-                      ? 'bg-gray-900 text-white'
+                    item.name === current
+                      ? 'bg-gray-900 text-purple-500 border round'
                       : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
-                {
-                  item.name === 'Metrics and Tokenomics' ? <NavDropDown options={options} /> : item.name
-                }
+                  {item.name === 'Metrics and Tokenomics' ? (
+                    <NavDropDown options={options} />
+                  ) : (
+                    item.name
+                  )}
                 </Disclosure.Button>
               ))}
             </div>

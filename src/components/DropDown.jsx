@@ -12,7 +12,7 @@ const NavDropDown = ({options}) => {
     return (
         <Menu as="div" className="relative inline-block text-left z-30">
             <div>
-                <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-50 shadow-sm px-4 py-2 bg-black text-sm font-medium text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                <Menu.Button className="inline-flex justify-center w-full rounded-md shadow-sm px-4 py-2 bg-black text-sm font-medium text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
                     Metrics and Tokenomics
                     <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>
@@ -37,7 +37,7 @@ const NavDropDown = ({options}) => {
                                             to={option.path}
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-purple-500' : 'text-white',
-                                                'block px-4 py-2 text-sm'
+                                                'block px-4 py-2 text-sm cursor-pointer'
                                             )}
                                         >
                                             {option.name}
