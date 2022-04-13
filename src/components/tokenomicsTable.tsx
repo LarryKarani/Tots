@@ -14,8 +14,9 @@ const TokenomicsTable = () => {
 
       const { description } = fields;
       const { tokenomicsTable } = fields;
+      const { imageData } = fields
 
-      return { id, title, description, tokenomicsTable };
+      return { id, title, description, tokenomicsTable, imageData };
     });
 
     setData(cleanData[0]);
@@ -46,7 +47,7 @@ const TokenomicsTable = () => {
   }, [cleanUpContentData]);
 
   if (isDataLoading) return <p>Loading...</p>;
-  console.log(data.tokenomicsTable);
+  console.log(data, 'kksks');
   return (
     <div className='px-4 sm:px-6 lg:px-8 bg-white py-20 pt-28' id='tokenomics'>
       <div className='sm:flex sm:items-center'>
@@ -151,6 +152,13 @@ const TokenomicsTable = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='w-full mx-auto mt-5 flex justify-center'>
+        <img
+          src={data?.imageData?.fields?.file?.url}
+          alt='data'
+          style={{width: '80%'}}
+        />
       </div>
     </div>
   );
