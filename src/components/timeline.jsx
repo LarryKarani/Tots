@@ -53,7 +53,7 @@ export default function Timeline() {
 
 
     return (
-        <div class="flex flex-col justify-center py-6 lg:py-12 bg-white">
+        <div class="flex flex-col justify-center py-6 lg:py-12 bg-white" id='timeline'>
             <h3 className='font-extrabold text-black text-center my-12 text-4xl'>Timeline</h3>
             <div class="w-full mx-auto lg:max-w-4xl">
                 <div class="relative">
