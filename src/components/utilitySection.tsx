@@ -132,15 +132,15 @@ export default function Utility() {
       <div className='pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 w-full bg-white mx-auto pt-28 ' id='utility'>
         <div className='max-w-7xl mx-auto mb-32 '>
           <div className='text-center'>
-            <h2 className='text-3xl tracking-tight font-extrabold text-purple-900 sm:text-4xl mt-12'>
+            <h2 className='text-3xl tracking-tight font-extrabold text-yellow-600 sm:text-4xl mt-12'>
               Utility
             </h2>
-            <p className='mt-3 max-w-2xl mx-auto font-bold text-xl text-pink-500 sm:mt-4'>
+            <p className='mt-3 max-w-2xl mx-auto font-bold text-xl text-black sm:mt-4'>
               Token utility for three distinct groups.
             </p>
           </div>
           <div>
-            <h2 className='text-xl tracking-tight font-extrabold text-purple-900 sm:text-xl mt-12'>
+            <h2 className='text-xl tracking-tight font-extrabold text-yellow-600 sm:text-xl mt-12'>
               1. {data?.nftBuyersUtilityDescription}
             </h2>
             <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-4 lg:max-w-none'>
@@ -151,7 +151,7 @@ export default function Utility() {
           </div>
 
           <div>
-            <h2 className='text-2xl tracking-tight font-extrabold text-pink-900 sm:text-2xl mt-12'>
+            <h2 className='text-2xl tracking-tight font-extrabold text-yellow-600 sm:text-2xl mt-12'>
               2. {data.advertisersUtilityDescription}.
             </h2>
             <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-4 lg:max-w-none'>
@@ -162,7 +162,7 @@ export default function Utility() {
           </div>
 
           <div>
-            <h2 className='text-2xl tracking-tight font-extrabold text-purple-900 sm:text-2xl mt-12'>
+            <h2 className='text-2xl tracking-tight font-extrabold text-yellow-600 sm:text-2xl mt-12'>
               3.{data?.earlyAdoptersUtilityDescription}.
             </h2>
             <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-4 lg:max-w-none'>

@@ -85,7 +85,7 @@ export default function Hero() {
                   <div className='mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center'>
                     <div>
                       <h1 className='mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>
-                        <span className='block text-indigo-400'>$ TOTS</span>
+                        <span className='block text-yellow-600'>$ TOTS</span>
                       </h1>
                       <p className='mt-3 font-bold text-white sm:mt-5 sm:text-xl lg:text-lg xl:text-xl'>
                         {data.description}

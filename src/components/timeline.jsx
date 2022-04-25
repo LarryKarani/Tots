@@ -121,8 +121,8 @@ function classNames(...classes) {
 
 export default function Example() {
     return (
-        <div className='py-36 bg-white '>
-            <h1 className='font-extrabold text-black text-4xl mx-auto text-center my-3'>Timelines</h1>
+        <div className='py-36 bg-white' id='timeline'>
+            <h1 className='font-extrabold text-yellow-600 text-4xl mx-auto text-center my-3'>Timelines</h1>
         <div className=" lg:border-t lg:border-b lg:border-gray-200">
             <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Progress">
                 <ol

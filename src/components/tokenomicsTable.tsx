@@ -52,7 +52,7 @@ const TokenomicsTable = () => {
     <div className='px-4 sm:px-6 lg:px-8 bg-white py-20 pt-28' id='tokenomics'>
       <div className='sm:flex sm:items-center'>
         <div className='sm:flex-auto'>
-          <h1 className='text-4xl font-extrabold text-gray-900 text-center'>
+          <h1 className='text-4xl font-extrabold text-yellow-600 text-center'>
             {data.title}
           </h1>
           <p className='text-xl font-bold text-gray-500 text-center mt-3'>

@@ -88,7 +88,7 @@ const Distribution = () => {
   };
   return (
     <div className='mx-auto flex flex-col justify-center'>
-      <h3 className='font-extrabold text-white text-4xl text-center mb-12'>Distribution</h3>
+      <h3 className='font-extrabold text-yellow-600 text-4xl text-center mb-12'>Distribution</h3>
 
       <div className='flex flex-col justify-center mx-auto mb-5'>
         {data?.allocations?.map((all, i) => <p className='text-white font-bold'> {i + 1}. {all}</p>)}

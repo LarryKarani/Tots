@@ -171,7 +171,7 @@ export default function Navbar() {
                           to={item.href}
                           className={classNames(
                             item.name === current
-                              ? 'bg-gray-900 text-purple-500'
+                              ? 'bg-gray-900 text-yellow-600'
                               : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                             'text-base font-medium text-white px-2 py-1 hover:text-gray-300 cursor-pointer'
                           )}
@@ -251,7 +251,7 @@ export default function Navbar() {
                   onClick={() => setCurrent(item.name)}
                   className={classNames(
                     item.name === current
-                      ? 'bg-gray-900 text-purple-500 border round'
+                      ? 'bg-gray-900 text-yellow-600 border round'
                       : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
