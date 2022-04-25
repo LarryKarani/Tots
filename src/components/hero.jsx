@@ -1,5 +1,5 @@
 import Tots from '../tots.png';
-import { useState,useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { client } from '../client';
 import { Link } from 'react-router-dom';
 import { ChevronRightIcon } from '@heroicons/react/solid';
@@ -14,10 +14,10 @@ import Separator from './separator'
 //     image: string
 // }
 
-const testData ={
-     title: '',
-     description: '',
-     image: ''
+const testData = {
+  title: '',
+  description: '',
+  image: ''
 }
 
 export default function Hero() {
@@ -28,38 +28,38 @@ export default function Hero() {
 
 
 
- const cleanUpContentData = useCallback((rawData) => {
+  const cleanUpContentData = useCallback((rawData) => {
 
-     const cleanData = rawData.map((dataObj) => {
+    const cleanData = rawData.map((dataObj) => {
 
-         const {sys, fields} = dataObj
-         const {id} = sys
+      const { sys, fields } = dataObj
+      const { id } = sys
 
-         const {title} = fields
+      const { title } = fields
 
-         const {description} = fields
+      const { description } = fields
 
-         const image = fields.heroImage.fields.file.url
+      const image = fields.heroImage.fields.file.url
 
-         return {id, title, description, image}
+      return { id, title, description, image }
 
-     } )
+    })
 
-     setData(cleanData[0])
- }, [])
+    setData(cleanData[0])
+  }, [])
 
   useEffect(() => {
-      setIsDataLoading(true)
-      const getData = async () => {
+    setIsDataLoading(true)
+    const getData = async () => {
       try {
         const response = await client.getEntries({
           content_type: 'landingHero',
         });
         const responseData = response.items
-        if(responseData.length > 0){
-           cleanUpContentData(responseData)
-        }else{
-            setData(testData);
+        if (responseData.length > 0) {
+          cleanUpContentData(responseData)
+        } else {
+          setData(testData);
         }
         console.log(responseData)
         setIsDataLoading(false);
@@ -71,7 +71,7 @@ export default function Hero() {
     getData();
   }, [cleanUpContentData]);
 
-  if(isDataLoading) return <p>Loading...</p>
+  if (isDataLoading) return <p>Loading...</p>
 
 
   return (
@@ -92,48 +92,23 @@ export default function Hero() {
                       </p>
                       <div className='mt-8 flex justify-left'>
                         <div className='inline-flex rounded-md shadow'>
-                          <Link
-                            to='/'
-                            className='inline-flex items-center  text-black bg-white rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'
-                          >
-                            <span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-purple-500 to-pink-500 rounded-full'>
-                              Join discord channel
-                            </span>
-                            <ChevronRightIcon
-                              className='ml-2 w-5 h-5 text-gray-500'
-                              aria-hidden='true'
-                            />
-                          </Link>
-                        </div>
-                        <div className='ml-3 inline-flex'>
-                          <Link
-                            to='/'
-                            className='inline-flex items-center text-black bg-white rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'
-                          >
-                            <span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-pink-500 rounded-full'>
-                              Join Presale whitelist
-                            </span>
-                            <ChevronRightIcon
-                              className='ml-2 w-5 h-5 text-gray-500'
-                              aria-hidden='true'
-                            />
-                          </Link>
+                          <button type="button" className="text-black font-extrabold bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Discord </button>
+                          <button type="button" className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Presale whitelist</button>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className='mt-12  align-center justify-center'>
-                      {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-                      <img
-                        className='w-full object-cover'
-                        src={data.image}
-                        alt=''
-                      />
+                    {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
+                    <img
+                      className='w-full object-cover'
+                      src={data.image}
+                      alt=''
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            
 
             {/* More main page content here... */}
           </main>
