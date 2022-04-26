@@ -76,7 +76,7 @@ export default function Timeline() {
                                 </div>
                                 <div
                                     class="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-indigo-400 border-2 border-red-200 rounded-full left-1/2 sm:translate-y-0">
-                                    <span class="text-white">1</span>
+                                    <span class="text-white font-extrabold">1</span>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ export default function Timeline() {
                                 </div>
                                 <div
                                     class="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-indigo-400 border-2 border-red-200 rounded-full left-1/2 sm:translate-y-0">
-                                    <span class="text-white">2</span>
+                                    <span class="text-white font-extrabold">2</span>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@ export default function Timeline() {
                                 </div>
                                 <div
                                     class="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-indigo-400 border-2 border-red-200 rounded-full left-1/2 sm:translate-y-0">
-                                    <span class="text-white">3</span>
+                                    <span class="text-white font-extrabold">3</span>
                                 </div>
                             </div>
                         </div>

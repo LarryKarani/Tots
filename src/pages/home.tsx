@@ -9,10 +9,11 @@ import TokenomicsTable from '../components/tokenomicsTable';
 import Distribution from '../components/Distribution';
 import Team from '../components/team';
 import Timeline from '../components/timeline';
+import Contact from '../components/contact';
 
 const Home = () => {
   return (
-    <div className='text-white mt-32 w-full z-10'>
+    <div className='text-white w-full z-10'>
       <Hero />
       <Separator />
       <Utility />
@@ -26,6 +27,8 @@ const Home = () => {
       <Timeline />
       <SeparatorClose />
       <Team />
+      <Separator />
+      <Contact/>
     </div>
   );
 }

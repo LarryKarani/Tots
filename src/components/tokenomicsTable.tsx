@@ -157,7 +157,7 @@ const TokenomicsTable = () => {
         <img
           src={data?.imageData?.fields?.file?.url}
           alt='data'
-          style={{width: '80%'}}
+          
         />
       </div>
     </div>

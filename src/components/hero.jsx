@@ -1,18 +1,8 @@
 import Tots from '../tots.png';
 import { useState, useEffect, useCallback } from 'react'
 import { client } from '../client';
-import { Link } from 'react-router-dom';
-import { ChevronRightIcon } from '@heroicons/react/solid';
+import HeroBackground from './heroBg';
 //import './hero.scss'
-import Separator from './separator'
-
-
-// interface HeroData {
-
-//     title: string
-//     description: string
-//     image: string
-// }
 
 const testData = {
   title: '',
@@ -76,28 +66,13 @@ export default function Hero() {
 
   return (
     <>
-      <div className='text-white w-3/4 mx-auto pt-12' id='home'>
+      <div className='text-white w-3/4 mx-auto pt-6' id='home'>
         <div className='relative overflow-hidden'>
           <main>
-            <div className='pt-10  sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden'>
+            <div className='pt-5  sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden'>
               <div className='mx-auto max-w-7xl lg:px-8'>
-                <div className='lg:grid lg:grid-cols-2 lg:gap-8'>
-                  <div className='mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center'>
-                    <div>
-                      <h1 className='mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>
-                        <span className='block text-yellow-600'>$ TOTS</span>
-                      </h1>
-                      <p className='mt-3 font-bold text-white sm:mt-5 sm:text-xl lg:text-lg xl:text-xl'>
-                        {data.description}
-                      </p>
-                      <div className='mt-8 flex justify-left'>
-                        <div className='inline-flex rounded-md shadow'>
-                          <button type="button" className="text-black font-extrabold bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Discord </button>
-                          <button type="button" className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Presale whitelist</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className='lg:grid lg:grid-cols-1'>
+                
                   <div className='mt-12  align-center justify-center'>
                     {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
                     <img
@@ -105,6 +80,19 @@ export default function Hero() {
                       src={data.image}
                       alt=''
                     />
+                  </div>
+                  <div className=''>
+                    <div>
+                      <p className='mt-3 font-bold text-white sm:mt-5 sm:text-xl lg:text-lg xl:text-xl'>
+                        {data.description}
+                      </p>
+                      <div className='mt-8 flex justify-left'>
+                        <div className='inline-flex rounded-md shadow'>
+                          <button type="button" className="text-black font-extrabold bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-extrabold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Discord </button>
+                          <button type="button" className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-extrabold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Presale whitelist</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

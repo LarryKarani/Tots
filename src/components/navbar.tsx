@@ -3,7 +3,7 @@ import { Fragment, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 //import { Link } from 'react-router-dom';
-import Tots from '../tots.png'
+import Tots from '../B.png'
 import { Link } from 'react-scroll';
 import NavDropDown from './DropDown';
 import { Disclosure, Menu} from '@headlessui/react';
@@ -15,6 +15,7 @@ const navigation = [
   { name: 'Metrics and Tokenomics', href: 'tokenomics', current: false },
   { name: 'Timeline', href: 'timeline', current: false },
   { name: 'Team', href: 'team', current: false},
+  {name: 'Contact', href: 'contact', current: false}
 ];
 
 const setCurrent = (name: string) => {
@@ -144,7 +145,7 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-center'>
-                <div className='flex-shrink-0 flex items-center'>
+                <div className='flex-shrink-0 flex items-center cursor-pointer'>
                   <img
                     className='block lg:hidden h-8 w-auto'
                     src={Tots}

@@ -25,7 +25,7 @@ function App() {
     <>
       <Navbar />
       <div className='font-ibm-plex items-center flex justify-center flex-col '>
-        <Background entered={entered} />
+        <Background />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/description' element={<Description />} />
