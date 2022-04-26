@@ -3,7 +3,7 @@ import { Fragment, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 //import { Link } from 'react-router-dom';
-import Tots from '../B.png'
+import Tots from '../treatment.png'
 import { Link } from 'react-scroll';
 import NavDropDown from './DropDown';
 import { Disclosure, Menu} from '@headlessui/react';
