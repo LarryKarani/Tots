@@ -17,6 +17,7 @@ const Background = () => {
         },
         fpsLimit: 60,
         emitters: {
+            direction: "top",
             life: {
                 count: 0,
                 duration: 0.1,
@@ -28,7 +29,7 @@ const Background = () => {
             },
             size: {
                 width: 100,
-                height: 0
+                height: 170
             },
             position: {
                 y: 100,
@@ -37,13 +38,13 @@ const Background = () => {
         },
         particles: {
             number: {
-                value: 0
+                value: 8
             },
             destroy: {
                 mode: "split",
                 split: {
                     count: 1,
-                    factor: { value: 1 / 1},
+                    factor: { value: 1 / 3 },
                     rate: {
                         value: 100
                     },
@@ -88,7 +89,7 @@ const Background = () => {
                             }
                         },
                         life: {
-                            count: 3,
+                            count: 1,
                             duration: {
                                 value: {
                                     min: 1,
@@ -101,8 +102,8 @@ const Background = () => {
                             gravity: {
                                 enable: false
                             },
-                            speed: 1,
-                            direction: "verticle",
+                            speed: 5,
+                            direction: "none",
                             random: true,
                             straight: false,
                             outMode: "destroy"
@@ -154,7 +155,8 @@ const Background = () => {
                     length: 10
                 }
             }
-        }}
+        }
+    }
     return (
         <div>
             <Particles
