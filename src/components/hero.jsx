@@ -81,23 +81,10 @@ export default function Hero() {
                       alt=''
                     />
                   </div>
-                  <div className=''>
-                    <div>
-                      <p className='mt-3 font-bold text-white sm:mt-5 sm:text-xl lg:text-lg xl:text-xl'>
-                        {data.description}
-                      </p>
-                      <div className='mt-8 flex justify-left'>
-                        <div className='inline-flex rounded-md shadow'>
-                          <button type="button" className="text-black font-extrabold bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-extrabold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Discord </button>
-                          <button type="button" className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-extrabold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Join Presale whitelist</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-
+          
             {/* More main page content here... */}
           </main>
         </div>
