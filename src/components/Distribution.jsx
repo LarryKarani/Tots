@@ -2,6 +2,105 @@ import Chart from 'react-apexcharts'
 import { useState, useEffect, useCallback } from 'react'
 import { client } from '../client';
 
+import { ArrowSmDownIcon, ArrowSmUpIcon } from '@heroicons/react/solid'
+import { CursorClickIcon, MailOpenIcon, UsersIcon } from '@heroicons/react/outline'
+
+const stats = [
+  { id: 1, name: 'Total Subscribers', stat: '71,897', icon: UsersIcon, change: '122', changeType: 'increase' },
+  { id: 2, name: 'Avg. Open Rate', stat: '58.16%', icon: MailOpenIcon, change: '5.4%', changeType: 'increase' },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+
+const DataTable = ({data}) =>{
+  return (
+    <div className='mt-8 flex flex-col'>
+      <div className='-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8'>
+        <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
+          <div className='overflow-hidden shadow ring-1 ring-black bg-indigo-500 ring-opacity-5 md:rounded-lg'>
+            <table className='min-w-full divide-y divide-gray-300  bg-indigo-500'>
+              <thead className=' bg-indigo-200'>
+                <tr>
+                  <th
+                    scope='col'
+                    className='py-3.5 pl-4 pr-3 text-left text-sm font-extra-bold text-black sm:pl-6'
+                  >
+                    {data?.tokensSoldByPeriod?.title}
+                  </th>
+                  <th
+                    scope='col'
+                    className='py-3.5 pl-4 pr-3 text-left text-sm font-extra-bold text-black sm:pl-6'
+                  >
+                    {data?.tokensSoldByPeriod?.title2}
+                  </th>
+                </tr>
+              </thead>
+              <tbody className='divide-y divide-gray-200 bg-white'>
+                {
+                  <>
+                  {
+                      data?.tokensSoldByPeriod?.colmnData?.map((colObj, i) => {
+                        return (
+
+                          <tr key={i}>
+                            <td className='whitespace-nowrap py-4 pl-4 pr-3 text-sm font-bold text-gray-500 sm:pl-6'>
+                              {colObj.col1}%
+                            </td>
+                            <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-bold'>
+                              {colObj.col2}%
+                            </td>
+
+                          </tr>
+
+                        )
+                      }
+                      
+                      )
+                    }
+                  </>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+
+const Stats = ({dataOptions, data}) => {
+
+
+
+  return (
+    <div>
+
+      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
+        {
+          <div
+            className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+          >
+           <DataTable data={data}/>
+          </div>
+        }
+        {
+          <div
+            className="relative bg-yellow-500 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+          >
+            <Chart options={dataOptions.options} series={dataOptions.series} type="pie" width={500} />
+          </div>
+        }
+      </dl>
+    </div>
+  )
+}
+
+
 
 const Distribution = () => {
 
@@ -15,15 +114,15 @@ const Distribution = () => {
   const cleanUpContentData = useCallback((rawData) => {
 
     const cleanData = rawData.map((dataObj) => {
-
+      console.log(dataObj, 'lol')
       const { sys, fields } = dataObj
       const { id } = sys
 
-      const { totsDistribution, allocations } = fields
+      const { totsDistribution, allocations, marketing, tokensSoldByPeriod, useOfCapital } = fields
 
   
 
-      return { id, totsDistribution, allocations }
+      return { id, totsDistribution, allocations, marketing, tokensSoldByPeriod, useOfCapital,  }
 
     })
 
@@ -57,8 +156,10 @@ const Distribution = () => {
   }, [cleanUpContentData]);
 
   if (isDataLoading) return <p>Loading...</p>
+  const seriesValue = data?.tokensSoldByPeriod?.colmnData?.map((obj) => obj.col2)
+  const labels = data?.tokensSoldByPeriod?.colmnData?.map((obj) => obj.col1)
   const dataOptions = {
-    series: data.totsDistribution && Object.values(data.totsDistribution),
+    series: seriesValue,
     options: {
       chart: {
         type: 'pie'
@@ -70,7 +171,7 @@ const Distribution = () => {
         horizontalAlign: 'center', 
         
       },
-      labels: data?.totsDistribution && Object.keys(data.totsDistribution),
+      labels: labels,
       responsive: [{
         breakpoint: 480,
         options: {
@@ -88,15 +189,7 @@ const Distribution = () => {
   };
   return (
     <div className='mx-auto flex flex-col justify-center'>
-      <h3 className='font-extrabold text-yellow-600 text-4xl text-center mb-12'>Distribution</h3>
-
-      <div className='flex flex-col justify-center mx-auto mb-5'>
-        {data?.allocations?.map((all, i) => <p className='text-white font-bold'> {i + 1}. {all}</p>)}
-        <div >
-          <Chart options={dataOptions.options} series={dataOptions.series} type="pie" width={500} />
-        </div>
-      </div>
-      
+      <Stats dataOptions={dataOptions} data={data}/>
     </div>
 
   )
