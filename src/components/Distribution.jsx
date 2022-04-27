@@ -1,9 +1,8 @@
 import Chart from 'react-apexcharts'
 import { useState, useEffect, useCallback } from 'react'
 import { client } from '../client';
-
-import { ArrowSmDownIcon, ArrowSmUpIcon } from '@heroicons/react/solid'
-import { CursorClickIcon, MailOpenIcon, UsersIcon } from '@heroicons/react/outline'
+import { MailOpenIcon, UsersIcon } from '@heroicons/react/outline'
+import Phase from './stats';
 
 const stats = [
   { id: 1, name: 'Total Subscribers', stat: '71,897', icon: UsersIcon, change: '122', changeType: 'increase' },
@@ -257,6 +256,10 @@ const Stats = ({dataOptions, data}) => {
             </div>
           }
         </dl>
+        
+        <Phase data={data?.marketing?.phaseOneData} headline='Metrics - Phase One' color='yellow'/>
+        <Phase data={data?.marketing?.phaseTwoData} headline='Metrics - Phase Two' color='red' />
+        <Phase data={data?.marketing?.phaseThreeData} headline='Metrics - Phase Three' color='green'/>
       </div>
     </>
   )
