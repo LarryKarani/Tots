@@ -76,10 +76,50 @@ const DataTable = ({data}) =>{
 const Stats = ({dataOptions, data}) => {
 
 
+  const seriesValue = data?.useOfCapital?.distribution?.map((obj) => obj.value)
+  const labels = data?.useOfCapital?.distribution?.map((obj) => obj.title)
+  const dataO = {
+    series: seriesValue,
+    options: {
+      chart: {
+        type: 'pie'
+      },
+      legend: {
+        showForSingleSeries: true,
+        show: true,
+        position: 'bottom',
+        horizontalAlign: 'center',
+
+      },
+      labels: labels,
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: '100%'
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              colors: ['#7ba1c6', '#95d8f0', '#d87544', '#faaf4c', '#7bc8a1', '#59667c'],
+              useSeriesColors: true
+            },
+
+          }
+        }
+      }]
+    },
+
+
+  };
+
+
 
   return (
+    <>
     <div>
-
+      <h3 className='text-white font-extrabold text-4xl text-center mb-3'> Tokenomics</h3>
+        <h3 className='text-white font-extrabold text-3xl text-center'> 35B $TOTS Tokens</h3>
       <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
         {
           <div
@@ -90,13 +130,37 @@ const Stats = ({dataOptions, data}) => {
         }
         {
           <div
-            className="relative bg-yellow-500 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            className="relative bg-yellow-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
           >
             <Chart options={dataOptions.options} series={dataOptions.series} type="pie" width={500} />
           </div>
         }
       </dl>
     </div>
+      <div>
+        <h3 className='text-white font-extrabold text-4xl text-center my-6'> Phase 1 Allocations</h3>
+        <h3 className='text-white font-extrabold text-3xl text-center'> Use of capital</h3>
+        <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
+          {
+            <div
+              className="relative bg-indigo-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            >
+              <Chart options={dataO.options} series={dataO.series} type="pie" width={500}/>
+            </div>
+          }
+          {
+            <div
+              className="relative bg-white flex justify-center align-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            >
+              <div className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 flex flex-col justify-center align-center">
+                <dt className="text-8xl font-extrabold text-gray-900 truncate text-center">95%</dt>
+                <dd className="mt-1 text-3xl font-semibold text-gray-500">Allocated to Development, Security, and Marketing</dd>
+              </div>
+            </div>
+          }
+        </dl>
+      </div>
+    </>
   )
 }
 
@@ -171,6 +235,9 @@ const Distribution = () => {
         horizontalAlign: 'center', 
         
       },
+      fill: {
+        colors: ['#7ba1c6','#95d8f0','#d87544', '#faaf4c', '#7bc8a1','#59667c']
+      },
       labels: labels,
       responsive: [{
         breakpoint: 480,
@@ -179,7 +246,12 @@ const Distribution = () => {
             width:'100%'
           },
           legend: {
-            position: 'bottom'
+            position: 'bottom',
+            labels: {
+              colors: ['#7ba1c6', '#95d8f0', '#d87544', '#faaf4c', '#7bc8a1', '#59667c'],
+              useSeriesColors: true
+            },
+
           }
         }
       }]
