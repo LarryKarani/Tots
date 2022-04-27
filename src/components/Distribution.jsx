@@ -113,6 +113,81 @@ const Stats = ({dataOptions, data}) => {
 
   };
 
+  const seriesValue1 = data?.marketing?.devData?.map((obj) => obj.value)
+  const labels1 = data?.marketing?.devData?.map((obj) => obj.title)
+  console.log(seriesValue1, 'juijhyyy')
+  const dataO1 = {
+    series: seriesValue1,
+    options: {
+      chart: {
+        type: 'pie'
+      },
+      legend: {
+        showForSingleSeries: true,
+        show: true,
+        position: 'bottom',
+        horizontalAlign: 'center',
+
+      },
+      labels: labels1,
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: '100%'
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              colors: ['#7ba1c6', '#95d8f0', '#d87544', '#faaf4c', '#7bc8a1', '#59667c'],
+              useSeriesColors: true
+            },
+
+          }
+        }
+      }]
+    },
+
+
+  };
+
+  const seriesValue2 = data?.marketing?.marketingData?.map((obj) => obj.value)
+  const labels2 = data?.marketing?.marketingData?.map((obj) => obj.title)
+  const dataO2 = {
+    series: seriesValue2,
+    options: {
+      chart: {
+        type: 'pie'
+      },
+      legend: {
+        showForSingleSeries: true,
+        show: true,
+        position: 'bottom',
+        horizontalAlign: 'center',
+
+      },
+      labels: labels2,
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: '100%'
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              colors: ['#7ba1c6', '#95d8f0', '#d87544', '#faaf4c', '#7bc8a1', '#59667c'],
+              useSeriesColors: true
+            },
+
+          }
+        }
+      }]
+    },
+
+
+  };
+
 
 
   return (
@@ -156,6 +231,29 @@ const Stats = ({dataOptions, data}) => {
                 <dt className="text-8xl font-extrabold text-gray-900 truncate text-center">95%</dt>
                 <dd className="mt-1 text-3xl font-semibold text-gray-500">Allocated to Development, Security, and Marketing</dd>
               </div>
+            </div>
+          }
+        </dl>
+      </div>
+      <div>
+        <h3 className='text-white font-extrabold text-4xl text-center my-6'> Phase 1  Marketing and Development Allocations</h3>
+        <h3 className='text-white font-extrabold text-3xl text-center'> Use of capital</h3>
+        <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
+         
+          {
+            <div
+              className="relative bg-yellow-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            >
+              <h3 className='font-extrabold text-white text-3xl text-center'>Development</h3>
+              <Chart options={dataO1.options} series={dataO1.series} type="pie" width={500} />
+            </div>
+          }
+          {
+            <div
+              className="relative bg-indigo-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            >
+              <h3 className='font-extrabold text-white text-3xl text-center'>Marketing</h3>
+              <Chart options={dataO2.options} series={dataO2.series} type="pie" width={500} />
             </div>
           }
         </dl>
