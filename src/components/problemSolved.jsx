@@ -53,7 +53,7 @@ const ProblemSolved = () => {
     console.log(data, 'dta')
 
     return (
-        <div className="relative py-16  pt-28" id='mission'>
+        <div className="relative py-16 bg-black pt-28" id='mission'>
             <div className="hidden absolute top-0 inset-x-0 h-1/2 lg:block" aria-hidden="true" />
             <div className="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
                 <div className="lg:grid lg:grid-cols-12">

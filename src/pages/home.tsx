@@ -17,18 +17,15 @@ const Home = () => {
       <Hero />
       <Separator />
       <Utility />
-      <SeparatorClose />
+      {/* <SeparatorClose /> */}
       <ProblemSolved />
-      <Separator />
       <TokenomicsTable />
-      <SeparatorClose />
       <Distribution />
-      <Separator />
       <Timeline />
       <SeparatorClose />
       <Team />
       <Separator />
-      <Contact/>
+      <Contact />
     </div>
   );
 }

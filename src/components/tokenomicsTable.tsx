@@ -47,7 +47,7 @@ const TokenomicsTable = () => {
   }, [cleanUpContentData]);
 
   if (isDataLoading) return <p>Loading...</p>;
-  console.log(data, 'kksks');
+
   return (
     <div className='px-4 sm:px-6 lg:px-8 bg-white py-20 pt-28' id='tokenomics'>
       <div className='sm:flex sm:items-center'>
@@ -157,7 +157,6 @@ const TokenomicsTable = () => {
         <img
           src={data?.imageData?.fields?.file?.url}
           alt='data'
-          
         />
       </div>
     </div>

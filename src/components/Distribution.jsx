@@ -191,20 +191,20 @@ const Stats = ({dataOptions, data}) => {
 
   return (
     <>
-    <div>
-      <h3 className='text-white font-extrabold text-4xl text-center mb-3'> Tokenomics</h3>
-        <h3 className='text-white font-extrabold text-3xl text-center'> 35B $TOTS Tokens</h3>
+    <div className=''>
+      <h3 className='text-black font-extrabold text-4xl text-center mb-3'> Tokenomics</h3>
+        <h3 className='text-black font-extrabold text-3xl text-center'> 35B $TOTS Tokens</h3>
       <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
         {
           <div
-            className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            className="relative bg-gray-200 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
           >
            <DataTable data={data}/>
           </div>
         }
         {
           <div
-            className="relative bg-yellow-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+            className="relative bg-black flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
           >
             <Chart options={dataOptions.options} series={dataOptions.series} type="pie" width={500} />
           </div>
@@ -241,7 +241,7 @@ const Stats = ({dataOptions, data}) => {
          
           {
             <div
-              className="relative bg-yellow-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+              className="relative bg-black mb-5 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
             >
               <h3 className='font-extrabold text-white text-3xl text-center'>Development</h3>
               <Chart options={dataO1.options} series={dataO1.series} type="pie" width={500} />
@@ -249,17 +249,17 @@ const Stats = ({dataOptions, data}) => {
           }
           {
             <div
-              className="relative bg-indigo-300 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
+              className="relative bg-indigo-300 mb-5 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
             >
               <h3 className='font-extrabold text-white text-3xl text-center'>Marketing</h3>
               <Chart options={dataO2.options} series={dataO2.series} type="pie" width={500} />
             </div>
           }
         </dl>
-        
+
         <Phase data={data?.marketing?.phaseOneData} headline='Metrics - Phase One' color='yellow'/>
-        <Phase data={data?.marketing?.phaseTwoData} headline='Metrics - Phase Two' color='red' />
-        <Phase data={data?.marketing?.phaseThreeData} headline='Metrics - Phase Three' color='green'/>
+        <Phase data={data?.marketing?.phaseTwoData} headline='Metrics - Phase Two' color='pink' />
+        <Phase data={data?.marketing?.phaseThreeData} headline='Metrics - Phase Three' color='blue'/>
       </div>
     </>
   )
@@ -279,7 +279,7 @@ const Distribution = () => {
   const cleanUpContentData = useCallback((rawData) => {
 
     const cleanData = rawData.map((dataObj) => {
-      console.log(dataObj, 'lol')
+    
       const { sys, fields } = dataObj
       const { id } = sys
 
@@ -361,7 +361,7 @@ const Distribution = () => {
 
   };
   return (
-    <div className='mx-auto flex flex-col justify-center'>
+    <div className='mx-auto flex flex-col justify-center bg-white'>
       <Stats dataOptions={dataOptions} data={data}/>
     </div>
 
