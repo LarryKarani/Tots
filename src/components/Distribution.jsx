@@ -191,7 +191,7 @@ const Stats = ({dataOptions, data}) => {
 
   return (
     <>
-    <div className=''>
+      <div id='break-down'>
       <h3 className='text-black font-extrabold text-4xl text-center mb-3'> Tokenomics</h3>
         <h3 className='text-black font-extrabold text-3xl text-center'> 35B $TOTS Tokens</h3>
       <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
@@ -201,7 +201,7 @@ const Stats = ({dataOptions, data}) => {
           >
            <DataTable data={data}/>
           </div>
-        }
+          } 
         {
           <div
             className="relative bg-black flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
@@ -211,7 +211,7 @@ const Stats = ({dataOptions, data}) => {
         }
       </dl>
     </div>
-      <div>
+      <div id="expenses">
         <h3 className='text-white font-extrabold text-4xl text-center my-6'> Phase 1 Allocations</h3>
         <h3 className='text-white font-extrabold text-3xl text-center'> Use of capital</h3>
         <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
@@ -235,15 +235,15 @@ const Stats = ({dataOptions, data}) => {
         </dl>
       </div>
       <div>
-        <h3 className='text-white font-extrabold text-4xl text-center my-6'> Phase 1  Marketing and Development Allocations</h3>
-        <h3 className='text-white font-extrabold text-3xl text-center'> Use of capital</h3>
+        <h3 className='text-black font-extrabold text-4xl text-center my-6'> Phase 1  Marketing and Development Allocations</h3>
+        <h3 className='text-black font-extrabold text-3xl text-center'> Use of capital</h3>
         <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
          
           {
             <div
               className="relative bg-black mb-5 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
             >
-              <h3 className='font-extrabold text-white text-3xl text-center'>Development</h3>
+              <h3 className='font-extrabold text-black text-3xl text-center'>Development</h3>
               <Chart options={dataO1.options} series={dataO1.series} type="pie" width={500} />
             </div>
           }
@@ -251,7 +251,7 @@ const Stats = ({dataOptions, data}) => {
             <div
               className="relative bg-indigo-300 mb-5 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
             >
-              <h3 className='font-extrabold text-white text-3xl text-center'>Marketing</h3>
+              <h3 className='font-extrabold text-black text-3xl text-center'>Marketing</h3>
               <Chart options={dataO2.options} series={dataO2.series} type="pie" width={500} />
             </div>
           }

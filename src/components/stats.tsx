@@ -53,7 +53,7 @@ function classNames(...classes: string[]) {
           <div key={item.title} className='px-4 py-2 sm:p-6'>
             <dt className='text-base font-normal text-black'>{item.title}</dt>
             <dd className='mt-1 flex justify-between items-baseline md:block lg:flex'>
-              <div className={`flex items-baseline text-2xl font-semibold text-${color}-600`}>
+              <div className={`flex items-baseline text-2xl font-semibold text-black`}>
                 {item.value}
               </div>
             </dd>

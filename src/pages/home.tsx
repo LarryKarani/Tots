@@ -10,6 +10,7 @@ import Distribution from '../components/Distribution';
 import Team from '../components/team';
 import Timeline from '../components/timeline';
 import Contact from '../components/contact';
+import Footer from '../components/footer';
 
 const Home = () => {
   return (
@@ -22,10 +23,9 @@ const Home = () => {
       <TokenomicsTable />
       <Distribution />
       <Timeline />
-      <SeparatorClose />
       <Team />
-      <Separator />
       <Contact />
+      <Footer/>
     </div>
   );
 }
