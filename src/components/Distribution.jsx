@@ -243,7 +243,7 @@ const Stats = ({dataOptions, data}) => {
             <div
               className="relative bg-black mb-5 flex justify-center pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
             >
-              <h3 className='font-extrabold text-black text-3xl text-center'>Development</h3>
+              <h3 className='font-extrabold text-white text-3xl text-center'>Development</h3>
               <Chart options={dataO1.options} series={dataO1.series} type="pie" width={500} />
             </div>
           }

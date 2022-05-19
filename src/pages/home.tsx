@@ -24,7 +24,7 @@ const Home = () => {
       <Distribution />
       <Timeline />
       <Team />
-      <Contact />
+      {/* <Contact /> */}
       <Footer/>
     </div>
   );
